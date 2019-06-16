@@ -1,13 +1,12 @@
 package utils;
 
-import com.google.common.collect.ImmutableList;
-import org.junit.Test;
-
-import java.util.List;
-
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;
 import static utils.LookupUtil.lookupInList;
+
+import com.google.common.collect.ImmutableList;
+import java.util.List;
+import org.junit.Test;
 
 public class LookupUtilTest {
 

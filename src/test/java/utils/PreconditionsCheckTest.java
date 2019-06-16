@@ -1,10 +1,10 @@
 package utils;
 
-import org.junit.Test;
-
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;
 import static utils.PreconditionsCheck.validate;
+
+import org.junit.Test;
 
 public class PreconditionsCheckTest {
 

@@ -1,7 +1,11 @@
 package core.client;
 
+import static com.google.common.truth.Truth.assertThat;
+import static org.mockito.Mockito.doReturn;
+
 import com.google.common.collect.ImmutableList;
-import core.client.SimpleHttpClient;
+import core.service.RestService;
+import java.util.List;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -11,11 +15,6 @@ import org.mockito.junit.MockitoRule;
 import pojos.Comment;
 import pojos.Post;
 import pojos.User;
-
-import java.util.List;
-
-import static com.google.common.truth.Truth.assertThat;
-import static org.mockito.Mockito.doReturn;
 
 public class SimpleHttpClientTest {
 

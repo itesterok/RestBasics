@@ -1,15 +1,14 @@
-package core;
-
-import core.service.RestService;
-import pojos.Comment;
-import pojos.Post;
-import pojos.User;
-
-import java.util.ArrayList;
-import java.util.List;
+package core.client;
 
 import static utils.LookupUtil.lookupInList;
 import static utils.PreconditionsCheck.validate;
+
+import core.service.RestService;
+import java.util.ArrayList;
+import java.util.List;
+import pojos.Comment;
+import pojos.Post;
+import pojos.User;
 
 /** Http client which allows communication with {@link "https://jsonplaceholder.typicode.com}. */
 public final class SimpleHttpClient {

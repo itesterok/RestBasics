@@ -1,10 +1,9 @@
 package core.service;
 
+import java.util.List;
 import pojos.Comment;
 import pojos.Post;
 import pojos.User;
-
-import java.util.List;
 
 /** Service for direct interactions with RESTful service. */
 public interface RestService {

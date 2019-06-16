@@ -1,10 +1,10 @@
 package utils;
 
+import static utils.PreconditionsCheck.validate;
+
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
-
-import static utils.PreconditionsCheck.validate;
 
 /** Searches for criteria given in a format of {@link Predicate} in given list. */
 public final class LookupUtil {
