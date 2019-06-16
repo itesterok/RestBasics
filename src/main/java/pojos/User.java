@@ -3,6 +3,7 @@ package pojos;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+/** Models user entity. */
 public final class User {
   private Address address;
   private Company company;

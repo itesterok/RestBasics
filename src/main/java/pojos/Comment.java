@@ -1,5 +1,9 @@
 package pojos;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
+/** Models comment entity. */
 public final class Comment {
   private int postId;
   private int id;
@@ -45,5 +49,21 @@ public final class Comment {
 
   public void setBody(String body) {
     this.body = body;
+  }
+
+  @Override
+  public String toString() {
+    return ToStringBuilder.reflectionToString(this);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    return EqualsBuilder.reflectionEquals(this, obj);
+  }
+
+  @Override
+  public int hashCode() {
+    return 34234 * getPostId() * getId()
+        + 99765 * (getEmail().hashCode() + getBody().hashCode() + getName().hashCode());
   }
 }

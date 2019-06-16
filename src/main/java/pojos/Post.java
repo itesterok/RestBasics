@@ -1,12 +1,16 @@
 package pojos;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
+/** Models post entity. */
 public final class Post {
   private int userId;
   private int id;
   private String title;
   private String body;
 
-  public float getUserId() {
+  public int getUserId() {
     return userId;
   }
 
@@ -14,7 +18,7 @@ public final class Post {
     this.userId = userId;
   }
 
-  public float getId() {
+  public int getId() {
     return id;
   }
 
@@ -36,5 +40,20 @@ public final class Post {
 
   public void setBody(String body) {
     this.body = body;
+  }
+
+  @Override
+  public String toString() {
+    return ToStringBuilder.reflectionToString(this);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    return EqualsBuilder.reflectionEquals(this, obj);
+  }
+
+  @Override
+  public int hashCode() {
+    return 34234 * getUserId() * getId() + 984598 * (getBody().hashCode() + getTitle().hashCode());
   }
 }
