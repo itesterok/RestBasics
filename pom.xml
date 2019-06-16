@@ -13,30 +13,31 @@
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
+        <groupId>org.apache.maven.plugins</groupId>
+        <version>3.3</version>
         <configuration>
           <source>1.8</source>
           <target>1.8</target>
         </configuration>
-        <groupId>org.apache.maven.plugins</groupId>
-        <version>3.3</version>
       </plugin>
     </plugins>
   </build>
+
   <dependencies>
     <dependency>
       <artifactId>rest-assured</artifactId>
       <groupId>io.rest-assured</groupId>
-      <version>RELEASE</version>
+      <version>4.0.0</version>
     </dependency>
     <dependency>
       <artifactId>rest-assured-common</artifactId>
       <groupId>io.rest-assured</groupId>
-      <version>RELEASE</version>
+      <version>4.0.0</version>
     </dependency>
     <dependency>
       <artifactId>json-schema-validator</artifactId>
       <groupId>io.rest-assured</groupId>
-      <version>RELEASE</version>
+      <version>4.0.0</version>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
@@ -47,24 +48,24 @@
       <artifactId>junit</artifactId>
       <groupId>junit</groupId>
       <scope>test</scope>
-      <version>RELEASE</version>
+      <version>4.12</version>
     </dependency>
     <dependency>
       <artifactId>truth</artifactId>
       <groupId>com.google.truth</groupId>
       <scope>test</scope>
-      <version>RELEASE</version>
+      <version>0.45</version>
     </dependency>
     <dependency>
       <artifactId>mockito-all</artifactId>
       <groupId>org.mockito</groupId>
       <scope>test</scope>
-      <version>RELEASE</version>
+      <version>1.10.19</version>
     </dependency>
     <dependency>
       <artifactId>google-collections</artifactId>
       <groupId>com.google.collections</groupId>
-      <version>RELEASE</version>
+      <version>1.0</version>
     </dependency>
   </dependencies>
 </project>
