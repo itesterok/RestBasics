@@ -48,7 +48,7 @@
       <artifactId>junit</artifactId>
       <groupId>junit</groupId>
       <scope>test</scope>
-      <version>4.12</version>
+      <version>RELEASE</version>
     </dependency>
     <dependency>
       <artifactId>truth</artifactId>
