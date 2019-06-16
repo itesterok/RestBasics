@@ -15,8 +15,9 @@ import org.junit.Test;
  * Tests that the implementation of RestService correctly interacts with the remote host. This is
  * API test and should be considered slow.
  *
- * <p>These tests establish a contract between our app and their service. If something at their side
- * is changed, tests must fail.
+ * <p>These tests establish a contract between our app and their service, meaning these tests are
+ * not unit tests but integration. That is why if something at their side is changed, tests must
+ * fail.
  */
 public class RestServiceImplTest {
 
