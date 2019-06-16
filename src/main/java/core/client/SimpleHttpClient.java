@@ -1,45 +1,27 @@
 package core;
 
-import io.restassured.response.Response;
+import core.service.RestService;
 import pojos.Comment;
 import pojos.Post;
 import pojos.User;
 
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-import static io.restassured.RestAssured.get;
 import static utils.LookupUtil.lookupInList;
 import static utils.PreconditionsCheck.validate;
 
 /** Http client which allows communication with {@link "https://jsonplaceholder.typicode.com}. */
 public final class SimpleHttpClient {
-  private static final String GET_USERS_URI = "/users";
-  private static final String GET_POSTS_URI = "/posts";
-  private static final String GET_COMMENTS_URI = "/comments";
-  private static URL baseUrl;
-  private static SimpleHttpClient simpleHttpClient;
 
-  private SimpleHttpClient() {}
+  private RestService service;
 
-  public static SimpleHttpClient getInstance() {
-    if (simpleHttpClient == null) {
-      try {
-        baseUrl = new URL("https://jsonplaceholder.typicode.com");
-      } catch (MalformedURLException e) {
-        throw new Error("Wrong endpoint!", e);
-      }
-      simpleHttpClient = new SimpleHttpClient();
-    }
-    return simpleHttpClient;
+  public SimpleHttpClient(RestService service) {
+    this.service = service;
   }
 
   public final List<User> getUsers() {
-    Response response = get(baseUrl + GET_USERS_URI);
-    return Arrays.asList(response.getBody().as(User[].class));
+    return service.getUsers();
   }
 
   /**
@@ -56,8 +38,7 @@ public final class SimpleHttpClient {
   }
 
   public final List<Post> getPosts() {
-    Response response = get(baseUrl + GET_POSTS_URI);
-    return Arrays.asList(response.getBody().as(Post[].class));
+    return service.getPosts();
   }
 
   public final List<Post> getPostsByUser(User user) {
@@ -66,8 +47,7 @@ public final class SimpleHttpClient {
   }
 
   public final List<Comment> getComments() {
-    Response response = get(baseUrl + GET_COMMENTS_URI);
-    return Arrays.asList(response.getBody().as(Comment[].class));
+    return service.getComments();
   }
 
   public final List<Comment> getCommentsToPosts(List<Post> posts) {
